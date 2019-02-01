@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: helloworld-api
+    tier: backend
+    track: stable
+  name: helloworld-api
+spec:
+  selector:
+    matchLabels:
+      app: helloworld-api
+      tier: backend
+      track: stable
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloworld-api
+      tier: backend
+      track: stable
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: helloworld-api
+        tier: backend
+        track: stable
+    spec:
+      containers:
+      - image: sreesanpd/helloworld-api:latest
+        name: helloworld-api
+        ports:
+          - name: http
+            containerPort: 5000
+        resources: {}
+status: {}
